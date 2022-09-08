@@ -279,7 +279,7 @@ var touchpad = (function() {
         var touches = evt.changedTouches;
         var foundTouch = false;
         for (var i = 0; i < touches.length; i += 1) {
-            if (ongoingTouches.length == 0 && !touches[i].target.classList.contains("touch")) {
+            if (ongoingTouches.length == 0 && !touches[i].target.classList.contains("controls")) {
                 continue;
             }
             foundTouch = true;
@@ -592,25 +592,25 @@ window.addEventListener("load", function() {
         updateUI();
     };
 
-    document.getElementById("keysbutton").addEventListener("click", function() {
-        showKeys();
-    });
-    document.getElementById("keyboardbutton").addEventListener("click", function() {
-        showKeyboard();
-    });
-    util.addFullscreenchangeEventListener(function() {
-        updateUI();
-    });
-    if (!util.fullscreenEnabled()) {
-        fullscreenbutton.classList.add("hidden");
-    }
-    fullscreenbutton.addEventListener("click", function() {
-        if (util.fullscreenElement()) {
-            util.exitFullscreen();
-        } else {
-            util.requestFullscreen(document.documentElement, {navigationUI: "hide"});
-        }
-    });
+    // document.getElementById("keysbutton").addEventListener("click", function() {
+    //     showKeys();
+    // });
+    // document.getElementById("keyboardbutton").addEventListener("click", function() {
+    //     showKeyboard();
+    // });
+    // util.addFullscreenchangeEventListener(function() {
+    //     updateUI();
+    // });
+    // if (!util.fullscreenEnabled()) {
+    //     fullscreenbutton.classList.add("hidden");
+    // }
+    // fullscreenbutton.addEventListener("click", function() {
+    //     if (util.fullscreenElement()) {
+    //         util.exitFullscreen();
+    //     } else {
+    //         util.requestFullscreen(document.documentElement, {navigationUI: "hide"});
+    //     }
+    // });
     document.getElementById("switchbutton").addEventListener("click", function() {
         var keysIndex = 0;
         for (var i = 0; i < keysSubScenes.length; i += 1) {
@@ -680,7 +680,7 @@ window.addEventListener("load", function() {
         updateUI();
     });
     document.addEventListener("mousedown", function(event) {
-        if (activeScene != mouseScene && event.buttons == 1 && event.target.classList.contains("touch")) {
+        if (activeScene != mouseScene && event.buttons == 1 && event.target.classList.contains("controls")) {
             util.requestPointerLock(mouseScene);
         }
     });

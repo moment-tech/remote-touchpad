@@ -226,6 +226,7 @@ button {
   margin-top: auto;
   overflow: visible;
   width: 85%;
+  z-index: -1;
   flex: 0.9;
   max-width: 800px;
   max-height: 800px;
