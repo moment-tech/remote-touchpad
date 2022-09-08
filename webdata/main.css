@@ -1,210 +1,235 @@
 @font-face {
-    font-family: "icon";
-    src: url("icon.woff") format("woff");
+  font-family: "icon";
+  src: url("icon.woff") format("woff");
 }
 
 .hidden {
-    display: none !important;
+  display: none !important;
 }
 
 html {
-    font-family: sans-serif;
-    -moz-user-select: none;
-    -webkit-user-select: none;
-    -ms-user-select: none;
-    user-select: none;
-    background-color: #404040;
-    color: white;
-    background-image: url(tex.png);
-    touch-action: none;
+  font-family: sans-serif;
+  -moz-user-select: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  background: rgb(110, 110, 110);
+  background: radial-gradient(
+    circle,
+    rgba(110, 110, 110, 1) 0%,
+    rgba(30, 30, 30, 1) 100%
+  );
+  color: white;
+
+  touch-action: none;
 }
 
 html,
 body,
 .scene {
-    width: 100%;
-    height: 100%;
-    margin: 0;
+  width: 100%;
+  height: 100%;
+  margin: 0;
 }
 
 .scene {
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    box-sizing: border-box;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  box-sizing: border-box;
 }
 
 p {
-    margin: 0;
-    font-size: 2rem;
-    word-wrap: break-word;
-    text-align: center;
-}
-
-button {
-    padding: 0;
-    background-color: transparent;
-    border: 1px solid black;
-    height: 1.5em;
-    width: 2em;
-    border-radius: 2px;
-    font-size: 2rem;
-    color: white;
-    font-family: "icon";
-    overflow: hidden;
-    cursor: pointer;
+  margin: 0;
+  font-size: 2rem;
+  word-wrap: break-word;
+  text-align: center;
 }
 
 button:focus {
-    outline: none;
+  outline: none;
 }
 
 #opening,
 #closed {
-    padding: 0 0.5rem;
+  padding: 0 0.5rem;
 }
 
 #opening noscript p,
 #closed p {
-    margin-bottom: 1em;
+  margin-bottom: 1em;
 }
 
 #reloadbutton {
-    font-size: 4rem;
-    margin: 0 auto;
-    max-width: 100%;
+  font-size: 4rem;
+  margin: 0 auto;
+  max-width: 100%;
 }
 
 #pad > p,
 #mouse > p {
-    color: gray;
-    text-shadow:
-        -1px -1px 0 black,
-        1px -1px 0 black,
-        -1px 1px 0 black,
-        1px 1px 0 black;
-    opacity: 0.08;
-    font-weight: bold;
-    font-size: 4rem;
+  color: gray;
+  text-shadow: -1px -1px 0 black, 1px -1px 0 black, -1px 1px 0 black,
+    1px 1px 0 black;
+  opacity: 0.08;
+  font-weight: bold;
+  font-size: 4rem;
 }
 
 @media (max-width: 32rem) {
-    #pad > p,
-    #mouse > p {
-        font-size: 13vw;
-    }
-}
-
-#pad > button, #keys > button {
-    position: absolute;
-    max-width: 50%;
-    max-height: 50%;
+  #pad > p,
+  #mouse > p {
+    font-size: 13vw;
+  }
 }
 
 #fullscreenbutton {
-    left: 0;
-    bottom: 0;
-    border-bottom: none;
-    border-left: none;
+  left: 0;
+  bottom: 0;
+  border-bottom: none;
+  border-left: none;
 }
 
 #keyboardbutton {
-    right: 0;
-    bottom: 0;
-    border-right: none;
-    border-bottom: none;
+  right: 0;
+  bottom: 0;
+  border-right: none;
+  border-bottom: none;
 }
 
 #keysbutton {
-    left: 0;
-    top: 0;
-    border-top: none;
-    border-left: none;
+  left: 0;
+  top: 0;
+  border-top: none;
+  border-left: none;
 }
 
 textarea {
-    flex-grow: 1;
-    border: none;
-    resize: none;
-    font-size: 2rem;
-    background-color: white;
-    color: black;
-    margin: 0;
-    padding: 0 0.5rem;
+  flex-grow: 1;
+  border: none;
+  resize: none;
+  font-size: 2rem;
+  background-color: white;
+  color: black;
+  margin: 0;
+  padding: 0 0.5rem;
 }
 
 #keyboard .buttons {
-    display: flex;
-    flex-direction: row;
+  display: flex;
+  flex-direction: row;
 }
 
 #keyboard .buttons > button {
-    border-bottom: none;
-    border-left: none;
+  border-bottom: none;
+  border-left: none;
 }
 
 #keyboard .buttons > button:last-of-type {
-    flex-grow: 1;
-    border-right: none;
+  flex-grow: 1;
+  border-right: none;
 }
 
 @media (min-aspect-ratio: 4/3) {
-    #keyboard {
-        flex-direction: row;
-    }
+  #keyboard {
+    flex-direction: row;
+  }
 
-    #keyboard .buttons {
-        flex-direction: column;
-    }
+  #keyboard .buttons {
+    flex-direction: column;
+  }
 
-    #keyboard .buttons > button {
-        border-top: none;
-        border-right: none;
-        border-left: 1px solid black;
-    }
+  #keyboard .buttons > button {
+    border-top: none;
+    border-right: none;
+    border-left: 1px solid black;
+  }
 
-    #keyboard .buttons > button:last-of-type {
-        border-top: 1px solid black;
-    }
+  #keyboard .buttons > button:last-of-type {
+    border-top: 1px solid black;
+  }
 }
 
 #keys .scene {
-    padding: 0.5rem;
-    padding-bottom: 0;
-    justify-content: flex-end;
+  padding: 0.5rem;
+  padding-bottom: 0;
+  justify-content: flex-end;
 }
 
 #switchbutton {
-    right: 0;
-    top: 0;
-    border-top: none;
-    border-right: none;
-}
-
-#keys .backbutton {
-    left: 0;
-    top: 0;
-    border-top: none;
-    border-left: none;
+  right: 0;
+  top: 0;
+  border-top: none;
+  border-right: none;
 }
 
 #keys .buttons {
-    display: flex;
-    justify-content: center;
-    margin-bottom: 0.5rem;
-    flex-shrink: 1;
-    height: 6rem;
-    min-height: 0;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 0.5rem;
+  flex-shrink: 1;
+  height: 6rem;
+  min-height: 0;
 }
 
 #keys .buttons > button:not(:last-of-type) {
-    border-right: none;
+  border-right: none;
 }
 
 #keys .buttons > button {
-    flex-shrink: 1;
-    height: 100%;
-    width: 8rem;
-    min-width: 0;
+  flex-shrink: 1;
+  height: 100%;
+  width: 8rem;
+  min-width: 0;
+}
+
+.pad {
+  display: flex;
+}
+
+.mainIcon {
+  padding-top: 35px;
+}
+
+.controls {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  height: calc(100% - 60px);
+  width: 100%;
+  margin: 20px;
+}
+
+.control {
+  background: rgba(110, 110, 110, 0.7);
+  border-radius: 30%;
+  filter: drop-shadow(0px 10px 60px #000);
+}
+
+button {
+  padding: 0;
+  background-color: transparent;
+  border: unset;
+  height: 70px;
+  width: 70px;
+  border-radius: 0px;
+  overflow: visible;
+  cursor: pointer;
+  background: url("back.png");
+  filter: drop-shadow(0px 2px 10px #000);
+}
+
+.touchpad {
+  margin-top: auto;
+  overflow: visible;
+  width: 85%;
+  flex: 0.9;
+  max-width: 800px;
+  max-height: 800px;
+  background: rgba(110, 110, 110, 0.7);
+  border-radius: 40px;
+  filter: drop-shadow(0px 10px 60px #000);
 }
